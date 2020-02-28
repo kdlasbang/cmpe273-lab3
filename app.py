@@ -39,14 +39,14 @@ def addstudent(_,info,name):
     global sid
     sid+=1
     students.append({'id':sid, 'name':name})
-    return "added "+name
+    return name
 
 @Mutation.field("addclass")
 def addclass(_,info,name):
     global cid
     cid+=1
     classes.append({'id':cid, 'name':name, 'student':[]})
-    return "added "+name
+    return name
 
 
 @query.field("students")
