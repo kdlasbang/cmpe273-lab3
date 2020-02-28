@@ -39,18 +39,14 @@ def addstudent(_,info,name):
     global sid
     sid+=1
     students.append({'id':sid, 'name':name})
-    for i in range(len(students)):
-        print(students[i])
-    return name
+    return "added "+name
 
 @Mutation.field("addclass")
 def addclass(_,info,name):
     global cid
     cid+=1
     classes.append({'id':cid, 'name':name, 'student':[]})
-    for i in range(len(classes)):
-        print(classes[i])
-    return name
+    return "added "+name
 
 
 @query.field("students")
@@ -58,7 +54,7 @@ def qstudent(_,info,id):
     for i in range(len(students)):
         if students[i]['id']==id:
             return students[i]
-    return null# error
+    return null# error 
 
 @query.field("classes")
 def qclass(_,info,id):
